@@ -5,7 +5,7 @@ int main()
 	char name[20], pendidikan[3];
 	int jabatan, jamKerja, gaji, tunjanganJabatan, tunjanganPendidikan, jamLembur, upahLembur, totalGaji;
     
-    gaji = 2000000;
+	gaji = 2000000;
     
 	printf("PROGRAM HITUNG GAJI KARYAWAN\n");  
   
