@@ -2,18 +2,23 @@
 
 int main()
 {
-	char name[20], pendidikan[3];
-	int jabatan, jamKerja, gaji, tunjanganJabatan, tunjanganPendidikan, jamLembur, upahLembur, totalGaji;
+	char nama[30];
+	char pendidikan[3][50] = {"SMA", "D3", "S1"};
+	int jabatan, jamKerja, gaji, tunjanganJabatan, tunjanganPendidikan, jamLembur, honorLembur, totalGaji;
     
-    gaji = 2000000;
+	gaji = 2000000;
     
 	printf("PROGRAM HITUNG GAJI KARYAWAN\n");  
-  
+	
+//	Input nama karywan
 	printf("Nama Karyawan: "); 
-	scanf("%[^\n]s", &name);
-  
+	scanf("%[^\n]s", &nama);
+	
+//	Input golongan jabatan
 	printf("Golongan Jabatan: ");
 	scanf("%d", &jabatan);
+	
+	
 	switch (jabatan)
 	{
 	    case 1 :
@@ -26,9 +31,13 @@ int main()
 	    	tunjanganJabatan = gaji*15/100;
 	    	break;
 	}
-  
+	
+//	Input pendidikan
 	printf("Pendidikan: ");
 	scanf("%s", &pendidikan);
+	strupr(pendidikan);
+	
+//	Perhitungan Pendidikan
 	if(strcmp(pendidikan, "SMA") == 0) {
 		tunjanganPendidikan = gaji*25/1000;
 	} else if(strcmp(pendidikan, "D3") == 0) {
@@ -38,22 +47,31 @@ int main()
 	} else {
 		tunjanganPendidikan = 0;
 	}
+	
+//	Input jam kerja
 	printf("Jumlah jam kerja: ");
 	scanf("%d", &jamKerja);
 	
-//	Proses Jam Lembur
+//	Validasi jam kerja
+	if(jamKerja < 8) {
+		printf("\nJam kerja tidak boleh dibawah 8 jam\n");
+		printf("Jumlah jam kerja: ");
+		scanf("%d", &jamKerja);
+	}
+	
+//	Perhitungan jam dan honor lembur
 	jamLembur = jamKerja - 8;
-	upahLembur = jamLembur * 3000;
+	honorLembur = jamLembur * 3000;
 	
 //	Total Gaji
-	totalGaji = gaji + tunjanganJabatan + tunjanganPendidikan + upahLembur;
+	totalGaji = gaji + tunjanganJabatan + tunjanganPendidikan + honorLembur;
 
 //	Form Output
-	printf("Nama Karyawan: %s\n",name);
-	printf("Tunjangan Jabatan adalah %d\n", tunjanganJabatan) ;
-	printf("Tunjangan Pendidikan adalah %d\n", tunjanganPendidikan) ;
-	printf("Jumlah Upah Lembur adalah %d\n", upahLembur);
-	printf("Total Gaji adalah %d\n", totalGaji);
+	printf("\nNama Karyawan: %s\n",nama);
+	printf("	Tunjangan Jabatan Rp %d\n", tunjanganJabatan) ;
+	printf("	Tunjangan Pendidikan Rp %d\n", tunjanganPendidikan) ;
+	printf("	Honor Lembur Rp %d\n", honorLembur);
+	printf("Total Gaji Rp %d\n", totalGaji);
 
 	return 0;  
 }
