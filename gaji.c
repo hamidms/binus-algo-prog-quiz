@@ -61,7 +61,7 @@ int main()
 	
 //	Perhitungan jam dan honor lembur
 	jamLembur = jamKerja - 8;
-	honorLembur = jamLembur * 3000;
+	honorLembur = jamLembur * 3000 * 25;
 	
 //	Total Gaji
 	totalGaji = gaji + tunjanganJabatan + tunjanganPendidikan + honorLembur;
