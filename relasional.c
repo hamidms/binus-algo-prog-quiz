@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main() {
-	int x = 3, y = 5;
+	int a = 3, b = 5;
 	
-	if(x==y) printf("%d sama dengan %d\n", x, y);
-	if(x!=y) printf("%d tidak sama dengan %d\n", x, y);
-	if(x<y) printf("%d kurang dari %d\n", x, y);
-	if(x>y) printf("%d lebih dari %d\n", x, y);
-	if(x<=y) printf("%d kurang dari sama dengan %d\n", x, y);
-	if(x>=y) printf("%d lebih dari sama dengan %d\n", x, y);
+	printf("%d & %d = %d\n", a, b, a&b);
+	printf("%d | %d = %d\n", a, b, a|b);
+	printf("%d ^ %d = %d\n", a, b, a^b);
+	printf("%d >> 2 = %d\n", b, b>>2);
+	printf("%d << 2 = %d\n", a, a<<2);
 	
 	return 0;
 }
+
